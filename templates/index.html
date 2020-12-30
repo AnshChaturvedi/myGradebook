@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <h1>Hi, {{name}}!</h1>
+    <h5 style="padding:20px">Here, you can see your current entries of assignments as well as an overall average mark towards the end. As you add assignments, your average will increase or decrease accordingly. You will also get a predicted mark (the mark that you should receive at the end of the course, taking into account the assignments you already have) and some suggestions to how you can increase your mark to the next nearest level.</h5>
+
+    <table style="width:100%" cellpadding="15">
+    <tr class="this">
+        <th style="font-size:20px;">Course</th>
+        <th style="font-size:20px;">Assignment</th>
+        <th style="font-size:20px;">IB Mark</th>
+        <th style="font-size:20px;">Raw Mark</th>
+    </tr>
+    {% for i in range(course_len) %}
+    <tr>
+        <td>{{ courses[i]["courses"] }}</td>
+        <td>{{ courses[i]["assignment_name"] }}</td>
+        <td>{{ courses[i]["ib_mark"] }}</td>
+        <td>{{ courses[i]["other_marks"] }}</td>
+    </tr>
+    {% endfor %}
+{% endblock %}

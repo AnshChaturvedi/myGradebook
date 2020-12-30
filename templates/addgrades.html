@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Grades
+{% endblock %}
+
+{% block main %}
+    <h2>Let's add some grades!</h2>
+    <h4 style="padding-bottom:30px;padding-top:20px;padding-right:175px;padding-left:175px">Note: When you type in the course name, include the level of study and type in the course the same way everytime.</h2>
+
+    <form action="/addgrades" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="course" placeholder="Course name" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="assignment_name" placeholder="Assignment name" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="ib_grade" placeholder="IB grade" type="text">
+        </div>
+         <div class="form-group">
+            <input autocomplete="off" class="form-control" name="raw_mark" placeholder="Raw mark" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Add Grade!</button>
+    </form>
+{% endblock %}
